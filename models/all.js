@@ -52,7 +52,7 @@ const deptSchema = new Schema(
 
 const Dept1 = mongoose.model("Dept1", deptSchema, "Dept1");
 
-// Todo : Course
+// Todo : Teacher
 const teacherSchema = new Schema(
   {
     tid: {

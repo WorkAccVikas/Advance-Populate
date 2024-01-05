@@ -1,0 +1,4 @@
+1. Get populated data from nested collections (nested populate)
+    - We use populate key in populate()
+    
+2. How to push element in array at start or at end

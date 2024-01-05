@@ -60,14 +60,17 @@ router.route("/customer1").get(function (req, res) {
       path: "issuedCourses",
       model: "Course1",
       populate: [
-        { path: "issuedBook", model: "Book1" },
+        { path: "issuedBook", model: "Book1", select: "bid bname price" },
         {
           path: "assignedTeacher",
           model: "Teacher1",
           populate: {
             path: "department",
-            options: { sort: { did: -1 } },
             model: "Dept1",
+            // ! : skip not working in nested populated data in options
+            // options: { limit: 1 },
+            // LEARN : How to sort on nested populated data
+            // options: { sort: { did: -1 } },
           },
         },
       ],

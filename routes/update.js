@@ -63,6 +63,7 @@ router.route("/customer1/:cid").put(function (req, res) {
   if (emp_id && course_id) {
     valueUpdated = {
       $push: {
+        // LEARN : push at start of the array
         "empDetails.listOfEmp": { $each: emp_id, $position: 0 },
         issuedCourses: course_id,
       },
@@ -70,12 +71,14 @@ router.route("/customer1/:cid").put(function (req, res) {
   } else if (emp_id) {
     valueUpdated = {
       $push: {
+        // LEARN : push at start of the array
         "empDetails.listOfEmp": { $each: emp_id, $position: 0 },
       },
     };
   } else if (course_id) {
     valueUpdated = {
       $push: {
+        // LEARN : push at end of the array
         issuedCourses: course_id,
       },
     };
